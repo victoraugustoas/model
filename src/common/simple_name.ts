@@ -1,7 +1,11 @@
-export class SimpleName {
+import { VO } from "./base/value_object";
+
+export class SimpleName extends VO<string> {
   private readonly name: string;
 
   constructor(name: string, min: number, max: number) {
+    super(name);
+
     const splitedNames = name.trim().split(" ");
     if (splitedNames.length < 2) throw new Error("name_must_contain_surname");
 
