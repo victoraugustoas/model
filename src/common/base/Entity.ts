@@ -3,9 +3,5 @@ export interface EntityProps {
 }
 
 export class Entity<Props extends EntityProps> {
-  id: number;
-
-  constructor(props: Props) {
-    this.id = props.id;
-  }
+  constructor(readonly id: number) {}
 }
