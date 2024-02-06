@@ -35,7 +35,7 @@ export class GetPortfolio implements UseCase<IN, OUT> {
     return Result.ok({ portfolio: portfolio.instance });
   }
 
-  async getBalancePortfolio(
+  private async getBalancePortfolio(
     value: IN,
     portfolio: Portfolio
   ): Promise<Result<BalancePortfolio>> {
@@ -55,11 +55,11 @@ export class GetPortfolio implements UseCase<IN, OUT> {
         })
       );
       const assetBalance = assetsWithQuantity.reduce((acc, asset) => {
-        const assetBroker: any = Array.from(
+        const assetBroker = Array.from(
           customerPortfolioBanking.instance.assets
-        ).find((assetBroker: any) => assetBroker.uic === asset.asset_uic);
+        ).find((assetBroker) => assetBroker.uic === asset.asset_uic);
 
-        return acc + asset.quantity.instance * assetBroker.current_price;
+        return acc + asset.quantity.instance * assetBroker!.current_price;
       }, 0);
 
       const customerBalanceSaxo =

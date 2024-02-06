@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { Result } from "../../../src/common/base/Result";
+import { AssetProps } from "../../../src/model_portfolio/model/Asset";
 import {
   ModelPortfolio,
   ModelPortfolioProps,
@@ -82,6 +83,11 @@ export class ModelPortfolioBuilder {
 
   withName(name: string) {
     this.props.name = name;
+    return this;
+  }
+
+  withAssets(assets: AssetProps[]) {
+    this.props.assets = assets;
     return this;
   }
 

@@ -36,7 +36,7 @@ test("deve retornar erro ao fazer a listagem", async () => {
   const useCase = new ListModelPortfolio(repo);
 
   jest
-    .spyOn(repo, "listPortfolios")
+    .spyOn(repo, "listModelPortfolios")
     .mockImplementation(() => Promise.resolve(Result.fail("gRPC unavailable")));
 
   const models = await useCase.execute({

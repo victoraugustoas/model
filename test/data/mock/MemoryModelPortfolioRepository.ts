@@ -11,7 +11,7 @@ export class MemoryModelPortfolioRepo implements ModelPortfolioRepository {
     this.db = models;
   }
 
-  async listPortfolios(
+  async listModelPortfolios(
     data: { customer_id: number; highlight?: boolean | undefined } & PageRequest
   ): Promise<Result<Page<ModelPortfolio[]>>> {
     let response = [...this.db];

@@ -16,7 +16,7 @@ export interface PortfolioProps extends EntityProps {
   balance_portfolio?: BalancePortfolioProps;
 }
 
-type PortfolioStatusType = "active" | "rejected";
+export type PortfolioStatusType = "active" | "rejected";
 
 export class Portfolio extends Entity<PortfolioProps> {
   private constructor(

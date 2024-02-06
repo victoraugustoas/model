@@ -9,11 +9,17 @@ export class AssetBuilder {
     return new AssetBuilder({
       id: faker.number.int(),
       name: faker.company.name(),
+      uic: faker.number.int({ min: 1 }).toString(),
     });
   }
 
   withName(name: string) {
     this.props.name = name;
+    return this;
+  }
+
+  withUic(uic: string) {
+    this.props.uic = uic;
     return this;
   }
 
