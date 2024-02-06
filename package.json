@@ -1,11 +1,16 @@
 {
   "name": "intl-model",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "license": "MIT",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.0",

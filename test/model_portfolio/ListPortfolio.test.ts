@@ -1,6 +1,6 @@
 import { Erro } from "../../src/common/base/Erro";
 import { Result } from "../../src/common/base/Result";
-import { ListModelPortfolio } from "../../src/model_portfolio/usecases/ListPortfolio";
+import { ListModelPortfolio } from "../../src/model_portfolio/usecases/ListModelPortfolio";
 import { ModelPortfolioBuilder } from "../data/builders/ModelPortfolioBuilder";
 import { MemoryModelPortfolioRepo } from "../data/mock/MemoryModelPortfolioRepository";
 

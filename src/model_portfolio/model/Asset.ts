@@ -4,10 +4,15 @@ import { SimpleName } from "../../common/types/SimpleName";
 
 export interface AssetProps extends EntityProps {
   name: string;
+  uic: string;
 }
 
 export class Asset extends Entity<AssetProps> {
-  private constructor(readonly id: number, readonly name: SimpleName) {
+  private constructor(
+    readonly id: number,
+    readonly name: SimpleName,
+    readonly uic: string
+  ) {
     super(id);
   }
 
@@ -21,6 +26,6 @@ export class Asset extends Entity<AssetProps> {
     const createAttr = Result.combine([name]);
     if (createAttr.wentWrong) return createAttr.asFail;
 
-    return Result.ok(new Asset(props.id, name.instance));
+    return Result.ok(new Asset(props.id, name.instance, props.uic));
   }
 }

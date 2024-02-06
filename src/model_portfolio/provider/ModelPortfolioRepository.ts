@@ -4,7 +4,7 @@ import { Page } from "../../common/types/Page";
 import { ModelPortfolio } from "../model/ModelPortfolio";
 
 export abstract class ModelPortfolioRepository {
-  abstract listPortfolios(
+  abstract listModelPortfolios(
     data: { customer_id: number; highlight?: boolean } & PageRequest
   ): Promise<Result<Page<ModelPortfolio[]>>>;
 }
